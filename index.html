@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Message</title>
+    <style>
+        /* Base styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        /* Container styling */
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Input and button styling */
+        input[type="date"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 ;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        #birthdate{
+            width:95%;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Scrollable message box styling */
+        #message {
+            display: none;
+            margin-top: 20px;
+            color: black;
+            font-size: 1.2em;
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        /* Responsive styling for tablets and larger screens */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 500px;
+                padding: 30px;
+            }
+
+            input[type="date"],
+            button {
+                font-size: 1.1em;
+            }
+
+            #message {
+                font-size: 1.3em;
+                max-height: 250px;
+            }
+        }
+
+        /* Additional styling for desktops */
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 600px;
+            }
+
+            input[type="date"],
+            button {
+                font-size: 1.2em;
+                padding: 12px;
+            }
+
+            #message {
+                font-size: 1.4em;
+                max-height: 300px;
+            }
+            h1{
+                text-align: center;
+                margin: 30px 0 0 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Hii! Today is October<b style= color:red;> 28</b>, 2024</h1>
+    <h3>Select Your Birthday or My Birthday </h3> 
+     <p>Note: If the selected birthdate cannot be submitted, this message is not intended for you.</p>
+    <input type="date" id="birthdate">
+    <button onclick="checkDate()">Submit</button>
+    <div id="message">Hi Dens, <br><br>
+        Since we just met yesterday, I figured you might be busy today. I didn’t want to disturb you, so I left this message nearby.
+         I’m not sure if you’ll see it or scan it, but I hope you do or maybe you’ll find it tomorrow, haha!
+    <br>
+    <br>
+        I just want to congratulate you for reaching October 28, 2024, your nine months into the year and 7 months of knowing you!
+        It’s been inspiring to watch your journey and growth, and I’m so grateful to have someone as beautiful and motivating in my life.
+        Thank you for being such a positive influence and for always being you. I hope the months ahead bring only good things, with no negative changes.
+         Keep going, and continue to shine just as brightly. More years to come!<br>
+         <br>
+        -Papa jm
+        </div>
+</div>
+
+<script>
+    function checkDate() {
+        const inputDate = document.getElementById("birthdate").value;
+        const targetDate = "2000-06-16";
+        const targetDate2 = "2003-02-13";
+        
+        if (inputDate === targetDate || inputDate === targetDate2) {
+            document.getElementById("message").style.display = "block";
+        } else {
+            alert("Sorry, that's not the correct date. This message is not intended for you.");
+        }
+    }
+</script>
+
+</body>
+</html>
